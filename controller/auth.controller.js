@@ -27,7 +27,8 @@ const Signup = async (req, res) => {
       createClientUser(res, username, email, hashedPassword, role);
     }
   } catch (err) {
-    res.status(401).json({ message: "Invalid body", error: err.message });
+    console.error("Signup Error:", error); // <-- this shows the real error
+    res.status(500).json({ message: "Signup failed", error: error.message });
   }
 }
 
