@@ -13,7 +13,7 @@ const sellerRoutes = require("./routes/seller.route")
 const session = require("express-session")
 const MySQLStore = require("express-mysql-session")(session);
 const app = express();
-const PORT = 8090;
+const PORT = 8033;
 
 
 app.use(express.json()); 
@@ -64,9 +64,6 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello from the server!");
 });
 
-const pageRoutes = require("./pageRoute");
-
-app.use("/" , pageRoutes);
 
 
 
