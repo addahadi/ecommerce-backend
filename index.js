@@ -56,6 +56,8 @@ app.use(cors({
 }));
 
 
+const x = 0;
+
 
 
 app.get("/", (req, res) => {
