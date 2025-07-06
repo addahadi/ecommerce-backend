@@ -26,10 +26,11 @@ app.use("/uploads", express.static("uploads"));
 
 
 const sessionStore = new MySQLStore({
-  host: "127.0.0.1",
-  user: "root",
-  password: "missoumadda",
-  database: "ecommerce-schema",
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,  
 });
 
 
@@ -46,7 +47,10 @@ app.use(
 
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin:[
+    "http://localhost:5173", 
+    "https://ecommerce-front-end-5yjz.vercel.app"
+  ],
   credentials: true,
  
 }));
